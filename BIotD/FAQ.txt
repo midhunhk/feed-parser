@@ -1,4 +1,6 @@
-June 2013
+FAQ for BIotD Parser [June 2013]
+================================
 
-1. About this project : Just a hobby project. Developed with nothing major in mind, may have bugs and some features may be incomplete.
-2. HOw to run this project : Make sure you have Java 6 Runtime installed, then run the file "run-biotd.cmd" 
+1. 	About this project : Just a hobby project. Developed with nothing major in mind, may have bugs and some 
+	features may be incomplete.
+2. 	How to run this project : Make sure you have Java 6 Runtime installed, then run the file "run-biotd.cmd" 
