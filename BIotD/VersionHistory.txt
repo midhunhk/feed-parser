@@ -1,0 +1,28 @@
+v 0.4.5 [June 2013]
+ - Bug fix for checking if file exists on disk
+ - Increasing file buffer size to 4096 bytes 
+
+v 0.4.4 [June 2013]
+ - Code Cleanup
+ - Added Apache Licence Version 2.0 document and 
+ 
+v 0.4.2 [June 2013]
+ - Added proper feedback to the user regarding whats going on
+ - Custom exception for the app
+ - Save images to disk, read values from settings
+ 
+v 0.4.0 [June 2013]
+ - More Settings
+ - Read Settings from external properties file
+ - Minor rewrite for feed parser classes for generic creation
+ 
+v 0.3.8 [June 2013]
+ - LocalRSSFeedParser extends RSSFeedParser
+ - Minor change to IFeedParser interface 
+ 
+v 0.3.2 [June 2013]
+ - Feed Parsers are based on the IFeedParser interface
+ - RSSFeedParser for parsing from URL works as expected on first test  
+
+v 0.2.9 [June 2013]
+ - Completed LocalRSSFeedParser based on a saved feed file on disk
