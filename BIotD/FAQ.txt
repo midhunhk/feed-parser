@@ -7,3 +7,4 @@ FAQ for BIotD Parser [June 2013]
 3.	Information on license : This application is licensed under Apache License Version 2.0. However the images serverd by 
 	Bing may have other licenses. Hence use of these images for any commerical purpose is strongly not adviced. 
 4.	License : Please refer to the file "License-2.0.txt" for details on the license applied. 
+5.	Where are my settings? : The configuration can be done in the "settings.properties" file, without the need to do any programming
