@@ -57,23 +57,26 @@ public class ReaderTest {
 			Feed feed = feedParser.readFeed();
 
 			if (feed != null && feed.getEntries() != null && feed.getEntries().size() > 0) {
-				// Bing sends same image for different countries with different
+				// Bing sends same image to different countries with different
 				// country names for some reason
 				Map<String, String> uniqueUrlsMap = FeedUtils.removeDuplicateFeeds(feed.getEntries());
 
 				System.out.println("Found " + uniqueUrlsMap.size() + " unique image(s) for today.");
 
-				// Loop through this unique urls map
-				// TODO : We are hardcoding the image type for now, need to read
-				// that from the source path
-				// TODO : Show file size of image saved
+				//     Loop through this unique urls map
+				//[x] TODO : We are hard-coding the image type for now, need to read
+				//    that from the source path
+				//[ ] TODO : Show file size of image saved
 				int i = 1;
 				String imgPath = null;
 				for (String imgName : uniqueUrlsMap.keySet()) {
-					System.out.println(" [" + i + "] " + imgName);
+					System.out.print(" [" + i + "] " + imgName + " ");
 					if (saveImage) {
 						imgPath = uniqueUrlsMap.get(imgName);
-						FeedUtils.saveImageAsFile(imgPath, localImagePath + imgName + ".jpg", overwriteImage);
+						//gets file extension from path
+						FeedUtils.saveImageAsFile(imgPath, localImagePath + imgName + "."+ imgPath.substring(imgPath.length()-3), overwriteImage);
+						//prints the image size in kb
+						System.out.print("\t\tfile Size: " + com.ae.feeds.reader.utils.FeedUtils.getfileSize()+"Kb.\n");
 					}
 					i++;
 				}
