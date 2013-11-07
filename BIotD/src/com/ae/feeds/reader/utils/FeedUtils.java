@@ -29,7 +29,7 @@ import java.util.Map;
 import com.ae.feeds.reader.model.FeedMessage;
 
 public class FeedUtils {
-
+	public static long fs;
 	/**
 	 * Returns a simple name, link pair removing duplicates from the FeedMessages
 	 * 
@@ -59,7 +59,7 @@ public class FeedUtils {
 	 * 
 	 * @param imageUrl
 	 * @param destinationFile
-	 * @param overwrite
+	 * @param overwrite 
 	 * @throws IOException
 	 */
 	public static long saveImageAsFile(String imageUrl, String destinationFile, boolean overwrite) {
@@ -86,6 +86,8 @@ public class FeedUtils {
 			while ((length = is.read(b)) != -1) {
 				fileSize += length;
 				os.write(b, 0, length);
+				//fs = (long) (fileSize*.000976562);
+				setFileSize(fileSize);
 			}
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
@@ -104,4 +106,20 @@ public class FeedUtils {
 		}
 		return fileSize;
 	}
+	//get the size of file through saveImageAsFile()
+	public static long getfileSize(){
+		return fs;
+	}
+	//Set a static variable to the image file size in Kb
+	public static void setFileSize(long fSize){
+		fs =(long) (fSize*.000976562) ;
+	}
+	/**
+	 *Dynamically return file extension
+	 *@param path
+	 *@return file extension 
+	 */
+	public static String getExtension(String path) {
+		return path.substring(path.lastIndexOf(".") + 1, path.length());
+		}
 }
