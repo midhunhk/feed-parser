@@ -114,4 +114,12 @@ public class FeedUtils {
 	public static void setFileSize(long fSize){
 		fs =(long) (fSize*.000976562) ;
 	}
+	/**
+	 *Dynamically return file extension
+	 *@param path
+	 *@return file extension 
+	 */
+	public static String getExtension(String path) {
+		return path.substring(path.lastIndexOf(".") + 1, path.length());
+		}
 }
