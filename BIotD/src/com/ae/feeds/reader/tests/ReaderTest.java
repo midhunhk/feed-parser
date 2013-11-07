@@ -70,13 +70,15 @@ public class ReaderTest {
 				int i = 1;
 				String imgPath = null;
 				for (String imgName : uniqueUrlsMap.keySet()) {
-					System.out.print(" [" + i + "] " + imgName + " ");
+					System.out.print(" [" + i + "] " + imgName);
 					if (saveImage) {
 						imgPath = uniqueUrlsMap.get(imgName);
 						//gets file extension from path
-						FeedUtils.saveImageAsFile(imgPath, localImagePath + imgName + "."+ imgPath.substring(imgPath.length()-3), overwriteImage);
-						//prints the image size in kb
-						System.out.print("\t\tfile Size: " + com.ae.feeds.reader.utils.FeedUtils.getfileSize()+"Kb.\n");
+						long fileSize = FeedUtils.saveImageAsFile(imgPath, localImagePath + imgName + "."+ FeedUtils.getExtension(imgPath), overwriteImage);
+						//convert to Kb
+						fileSize = (long)(fileSize*.000976562);
+						//prints the image type and size in kb
+						System.out.print("." + FeedUtils.getExtension(imgPath) + "\t\tfile Size: " + com.ae.feeds.reader.utils.FeedUtils.getfileSize()+"Kb.\n");
 					}
 					i++;
 				}
