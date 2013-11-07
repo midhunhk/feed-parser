@@ -64,9 +64,6 @@ public class ReaderTest {
 				System.out.println("Found " + uniqueUrlsMap.size() + " unique image(s) for today.");
 
 				//     Loop through this unique urls map
-				//[x] TODO : We are hard-coding the image type for now, need to read
-				//    that from the source path
-				//[ ] TODO : Show file size of image saved
 				int i = 1;
 				String imgPath = null;
 				for (String imgName : uniqueUrlsMap.keySet()) {
