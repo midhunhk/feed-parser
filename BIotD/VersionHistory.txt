@@ -1,3 +1,9 @@
+v 0.4.7 [November 2013]
+ - Read the image extension from the filepath instead of hardcoding
+ 
+v 0.4.6 [June 2013]
+ - Show file size and total file size for images saved to disk
+ 
 v 0.4.5 [June 2013]
  - Bug fix for checking if file exists on disk
  - Increasing file buffer size to 4096 bytes 

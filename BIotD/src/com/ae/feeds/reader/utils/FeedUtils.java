@@ -22,13 +22,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.ae.feeds.reader.model.FeedMessage;
 
+/**
+ * Helper class for dealing with feeds and data
+ * 
+ * @author Midhun
+ * 
+ */
 public class FeedUtils {
+
+	private static final int	BUFFER_SIZE	= 4096;
 
 	/**
 	 * Returns a simple name, link pair removing duplicates from the FeedMessages
@@ -40,10 +49,10 @@ public class FeedUtils {
 		if (source == null) {
 			return null;
 		}
-		// lets parse the data
+		// We are using hashmap as same imagenames will have same hash efefctively removing duplicates
 		Map<String, String> uniqueUrlsMap = new HashMap<String, String>();
-		String link = "";
-		String imageName = "";
+		String link = null;
+		String imageName = null;
 
 		for (FeedMessage fm : source) {
 			link = fm.getLink();
@@ -76,12 +85,13 @@ public class FeedUtils {
 					throw new Exception("Skipping save as file already exists");
 				}
 			}
-			
+			// Open the image URL stream and download / read the image data
 			url = new URL(imageUrl);
 			is = url.openStream();
 			os = new FileOutputStream(destinationFile);
-			
-			byte[] b = new byte[4096];
+
+			// At a time, BUFFER_SIZE amount of data will be read from the stream
+			byte[] b = new byte[BUFFER_SIZE];
 			int length;
 			while ((length = is.read(b)) != -1) {
 				fileSize += length;
@@ -103,5 +113,32 @@ public class FeedUtils {
 			}
 		}
 		return fileSize;
+	}
+
+	/**
+	 * Returns the extension of the file.
+	 * 
+	 * @param fileName
+	 * @return
+	 */
+	public static String getFileExtension(String fileName) {
+		if (fileName == null)
+			return "";
+		return fileName.substring(fileName.lastIndexOf(".") + 1);
+	}
+
+	private static String[]	units	= { "bytes", "KiB", "MiB", "GiB" };
+
+	/**
+	 * Returns the file size as a readable string
+	 * 
+	 * @param size
+	 * @return
+	 */
+	public static String readableFileSize(long size) {
+		if (size <= 0)
+			return "0";
+		int digitGroups = (int) (Math.log10(size) / Math.log10(1024));
+		return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
 	}
 }

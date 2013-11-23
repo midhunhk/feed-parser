@@ -35,7 +35,7 @@ import com.ae.feeds.reader.utils.PropertyReader;
 public class ReaderTest {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Bing Image of The Day Parser 0.4.5");
+		System.out.println("Bing Image of The Day Parser 0.4.7");
 
 		// Read the settings
 		int type = PropertyReader.readIntProperty("feed.source");
@@ -58,24 +58,34 @@ public class ReaderTest {
 
 			if (feed != null && feed.getEntries() != null && feed.getEntries().size() > 0) {
 				// Bing sends same image for different countries with different
-				// country names for some reason
+				// country names for some reason, so this needs to be removed
 				Map<String, String> uniqueUrlsMap = FeedUtils.removeDuplicateFeeds(feed.getEntries());
 
 				System.out.println("Found " + uniqueUrlsMap.size() + " unique image(s) for today.");
 
 				// Loop through this unique urls map
-				// TODO : We are hardcoding the image type for now, need to read
-				// that from the source path
-				// TODO : Show file size of image saved
 				int i = 1;
-				String imgPath = null;
+				long fileSize  = 0;
+				long totalSize = 0;
+				String fileName = null;
+				String imgPath  = null;
 				for (String imgName : uniqueUrlsMap.keySet()) {
 					System.out.println(" [" + i + "] " + imgName);
 					if (saveImage) {
 						imgPath = uniqueUrlsMap.get(imgName);
-						FeedUtils.saveImageAsFile(imgPath, localImagePath + imgName + ".jpg", overwriteImage);
+						fileName = localImagePath + imgName + FeedUtils.getFileExtension(imgPath);
+						fileSize = FeedUtils.saveImageAsFile(imgPath, fileName, overwriteImage);
+						if(fileSize > 0){
+							System.out.println(" > " + FeedUtils.readableFileSize(fileSize));
+							totalSize += fileSize;
+						}
 					}
 					i++;
+				}
+				// Print out a pretty total size downloaded as summary
+				if(totalSize > 0){
+					System.out.println("--------------------------------------------------");
+					System.out.println(" > Total " + FeedUtils.readableFileSize(totalSize));
 				}
 			} else {
 				System.out.println("Unable to fetch feed or image details. Please try again later");
