@@ -88,7 +88,7 @@ public class ReaderTest {
 					System.out.println(" > Total " + FeedUtils.readableFileSize(totalSize));
 				}
 			} else {
-				System.out.println("Unable to fetch feed or image details. Please try again later");
+				System.out.println("Unable to fetch feed or image details. Please try again later.");
 			}
 		} catch (AppException e) {
 			System.err.println("An Exception has occured :  " + e.getMessage());
