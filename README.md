@@ -13,8 +13,7 @@ Contributions for improving (or completing) functionalities or adding new featur
 
 License
 =======
-Copyright 2010 The Android Open Source Project
-Copyright 2013 Daniel Smith
+Copyright 2013 Midhun Harikumar
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
