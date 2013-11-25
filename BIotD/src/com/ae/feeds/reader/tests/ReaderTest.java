@@ -25,6 +25,7 @@ import com.ae.feeds.reader.read.IFeedParser;
 import com.ae.feeds.reader.read.ParserReaderFactory;
 import com.ae.feeds.reader.utils.FeedUtils;
 import com.ae.feeds.reader.utils.PropertyReader;
+import com.ae.feeds.reader.utils.AppConstants;
 
 /**
  * Test Drive the feed image saving application
@@ -35,13 +36,13 @@ import com.ae.feeds.reader.utils.PropertyReader;
 public class ReaderTest {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Bing Image of The Day Parser 0.4.7");
+		System.out.println(AppConstants.APP_TITLE + AppConstants.APP_VERSION);
 
 		// Read the settings
-		int type = PropertyReader.readIntProperty("feed.source");
-		boolean saveImage = PropertyReader.readBooleanProperty("feed.image.save");
-		String localImagePath = PropertyReader.readProperty("feed.image.save.location");
-		boolean overwriteImage = PropertyReader.readBooleanProperty("feed.image.save.overwrite");
+		int type = PropertyReader.readIntProperty(AppConstants.SETTING_FEED_SOURCE);
+		boolean saveImage = PropertyReader.readBooleanProperty(AppConstants.SETTING_SAVE_IMAGE);
+		String localImagePath = PropertyReader.readProperty(AppConstants.SETTING_SAVE_LOCATION);
+		boolean overwriteImage = PropertyReader.readBooleanProperty(AppConstants.SETTING_OVERWRITE);
 
 		// Log the current save image settings
 		if (saveImage) {
