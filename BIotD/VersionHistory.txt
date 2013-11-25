@@ -1,3 +1,6 @@
+v 0.4.8 [November 2013]
+ - Moved some strings to external constants file
+ 
 v 0.4.7 [November 2013]
  - Read the image extension from the filepath instead of hardcoding
  
