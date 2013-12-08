@@ -74,7 +74,7 @@ public class ReaderTest {
 					System.out.println(" [" + i + "] " + imgName);
 					if (saveImage) {
 						imgPath = uniqueUrlsMap.get(imgName);
-						fileName = localImagePath + imgName + FeedUtils.getFileExtension(imgPath);
+						fileName = localImagePath + imgName + "." + FeedUtils.getFileExtension(imgPath);
 						fileSize = FeedUtils.saveImageAsFile(imgPath, fileName, overwriteImage);
 						if(fileSize > 0){
 							System.out.println(" > " + FeedUtils.readableFileSize(fileSize));
