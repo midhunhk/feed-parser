@@ -16,16 +16,16 @@
 
 package com.ae.feeds.reader.utils;
 
-public interface AppConstants{
+public interface AppConstants {
 
-  public static String APP_VERSION = "0.4.8";
-  public static String APP_TITLE = "Bing Image of The Day Parser ";
-  
-  /* Settings */
-  public static String SETTING_FEED_SOURCE = "feed.source";
-  public static String SETTING_SAVE_IMAGE = "feed.image.save";
-  public static String SETTING_SAVE_LOCATION = "feed.image.save.location";
-  public static String SETTING_OVERWRITE = "feed.image.save.overwrite";
-  public static String SETTING_SAVE_IMAGE = "feed.image.save";
+	/* App name and vesrion */
+	public static String	APP_VERSION				= "0.4.8";
+	public static String	APP_TITLE				= "Bing Image of The Day Parser ";
+
+	/* Settings Keys */
+	public static String	SETTING_FEED_SOURCE		= "feed.source";
+	public static String	SETTING_SAVE_IMAGE		= "feed.image.save";
+	public static String	SETTING_SAVE_LOCATION	= "feed.image.save.location";
+	public static String	SETTING_OVERWRITE		= "feed.image.save.overwrite";
 
 }
