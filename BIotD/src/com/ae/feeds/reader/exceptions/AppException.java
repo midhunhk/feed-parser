@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Midhun Harikumar
+ * Copyright 2014 Midhun Harikumar
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package com.ae.feeds.reader.exceptions;
 
 /**
- * Exception class for the project
+ * Exception representation for the application
  * 
  * @author Midhun
  * 
