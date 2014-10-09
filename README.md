@@ -10,10 +10,10 @@ Contributions for improving (or completing) functionalities or adding new featur
 Usage
 =====
 To use the Bing Image of the Day and download the images, you can either
-1. Download the latest build file from https://github.com/midhunhk/feed-parser/tree/master/BIotD/builds
-2. Extract the zip file contents
-3. Modify the `settings.properties` file in /app folder (Set the dowload path)
-4. Simply run `run-biotd-app.cmd` file if you are on a Windows machine
+ 1. Download the latest build file from https://github.com/midhunhk/feed-parser/tree/master/BIotD/builds
+ 2. Extract the zip file contents
+ 3. Modify the `settings.properties` file in /app folder (Set the dowload path)
+ 4. Simply run `run-biotd-app.cmd` file if you are on a Windows machine
 
 License
 =======
