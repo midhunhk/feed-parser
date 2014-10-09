@@ -15,6 +15,11 @@ To use the Bing Image of the Day and download the images, you can either
  3. Modify the `settings.properties` file in /app folder (Set the dowload path)
  4. Simply run `run-biotd-app.cmd` file if you are on a Windows machine
 
+Or if you are not using a Windows machine, want to see the code or get hands on
+ 1. Import the project into a Java IDE like Eclipse (or build and run the application from a suitable editor)
+ 2. Modify the `settings.properties` file in /app folder (Set the dowload path)
+ 3. Open the file `com.ae.feeds.reader.tests.ReaderTest` and that's where you start
+
 License
 =======
 Copyright 2013 Midhun Harikumar
