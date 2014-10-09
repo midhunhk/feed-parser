@@ -1,9 +1,9 @@
 Feed Parser (for Bing's homepage images)
 ========================================
 
-This project is basically an XML based Feed parser, which is implemented for Bing Image of the Day as an exampke. It saves images to disk. Included is a very basic version which may be extended as a general purpose feed parser.
+This project is basically an XML based Feed parser, with implementation for Bing Image of the Day as an example. It saves images to disk. Included is a very basic version which may be extended as a general purpose feed parser.
 
-Each image from Bing may or may not have a license as applicable, and are not covered under "Apache License Version 2.0".
+Each image from Bing may or may not have a license as applicable, and are not covered under "Apache License Version 2.0" under which this software is released.
 
 Contributions for improving (or completing) functionalities or adding new features are welcome.
 
