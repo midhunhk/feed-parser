@@ -66,6 +66,7 @@ public class ReaderTest {
 
 				// Loop through this unique urls map
 				int i = 1;
+				int numImagesSaved = 0;
 				long fileSize  = 0;
 				long totalSize = 0;
 				String fileName = null;
@@ -79,6 +80,7 @@ public class ReaderTest {
 						if(fileSize > 0){
 							System.out.println(" > " + FeedUtils.readableFileSize(fileSize));
 							totalSize += fileSize;
+							numImagesSaved++;
 						}
 					}
 					i++;
@@ -86,7 +88,7 @@ public class ReaderTest {
 				// Print out a pretty total size downloaded as summary
 				if(totalSize > 0){
 					System.out.println("--------------------------------------------------");
-					System.out.println(" > Total " + FeedUtils.readableFileSize(totalSize));
+					System.out.println(" > Total " + FeedUtils.readableFileSize(totalSize) + " (" + numImagesSaved + " files)");
 				}
 			} else {
 				System.out.println("Unable to fetch feed or image details. Please try again later.");

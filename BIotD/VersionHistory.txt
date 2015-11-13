@@ -1,3 +1,6 @@
+v 0.4.9 [November 2015]
+ - Added number of files downloaded in summary
+ 
 v 0.4.8 [December 2013]
  - Moved some strings to external constants file
  - Fixed an issue with improper extension on save

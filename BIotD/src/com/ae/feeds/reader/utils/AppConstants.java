@@ -19,7 +19,7 @@ package com.ae.feeds.reader.utils;
 public interface AppConstants {
 
 	/* App name and vesrion */
-	public static String	APP_VERSION				= "0.4.8";
+	public static String	APP_VERSION				= "0.4.9";
 	public static String	APP_TITLE				= "Bing Image of The Day Parser ";
 
 	/* Settings Keys */
